@@ -89,7 +89,7 @@ lavaworks.spigot_check = function(pos, node)
 		else
 			if spigotname == "lavaworks:spigot_pouring" then
 				minetest.add_node({x=pos.x,y=pos.y,z=pos.z},{name = "lavaworks:spigot", param2 = fdir})
-				if belowname == "default:lava_source" and not finitelava then
+				if belowname == "default:lava_source" then
 					minetest.remove_node({x=pos.x,y=pos.y-1,z=pos.z})
 				end
 			end
@@ -112,7 +112,7 @@ lavaworks.fountainhead_check = function(pos, node)
 		else
 			if fountainhead_name == "lavaworks:fountainhead_pouring" then
 				minetest.add_node({x=pos.x,y=pos.y,z=pos.z},{name = "lavaworks:fountainhead"})
-				if abovename == "default:lava_source" and not finitelava then
+				if abovename == "default:lava_source" then
 					minetest.remove_node({x=pos.x,y=pos.y+1,z=pos.z})
 				end
 			end
