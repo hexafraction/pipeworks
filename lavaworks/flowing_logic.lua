@@ -16,7 +16,7 @@ lavaworks.check_for_liquids = function(pos)
 		{x=pos.x,y=pos.y,z=pos.z+1},	}
 	for i =1,6 do
 		local name = minetest.get_node(coords[i]).name
-		if name and string.find(name,"lava") then
+		if name and string.find(name,"lava") and (not(string.find(name, "lavaworks"))) then
 			if finitelava then minetest.remove_node(coords[i]) end
 			return true
 		end
